@@ -4,7 +4,7 @@ public class Player {
     private int score;
     private boolean turn;
 
-    public Player (int score, boolean turn) {
+    public Player(int score, boolean turn) {
         this.score = score;
         this.turn = turn;
     }
