@@ -34,48 +34,48 @@ public class Controller implements Initializable {
     @FXML
     Label l9;
 
-    GameField gfield = new GameField();
+    GameField field = new GameField();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        gfield.reset(p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9);
-        b1.setOnMouseClicked(event -> gfield.reset(p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
+        field.reset(p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9);
+        b1.setOnMouseClicked(event -> field.reset(p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
 
-        l1.setOnMouseEntered(event-> gfield.preTurnIn(l1,0));
-        l1.setOnMouseExited(event-> gfield.preTurnOut(l1,0));
+        l1.setOnMouseEntered(event-> field.preTurnIn(l1,0));
+        l1.setOnMouseExited(event-> field.preTurnOut(l1,0));
 
-        l2.setOnMouseEntered(event-> gfield.preTurnIn(l2,1));
-        l2.setOnMouseExited(event-> gfield.preTurnOut(l2,1));
+        l2.setOnMouseEntered(event-> field.preTurnIn(l2,1));
+        l2.setOnMouseExited(event-> field.preTurnOut(l2,1));
 
-        l3.setOnMouseEntered(event->gfield.preTurnIn(l3,2));
-        l3.setOnMouseExited(event->gfield.preTurnOut(l3,2));
+        l3.setOnMouseEntered(event-> field.preTurnIn(l3,2));
+        l3.setOnMouseExited(event-> field.preTurnOut(l3,2));
 
-        l4.setOnMouseEntered(event->gfield.preTurnIn(l4,3));
-        l4.setOnMouseExited(event->gfield.preTurnOut(l4,3));
+        l4.setOnMouseEntered(event-> field.preTurnIn(l4,3));
+        l4.setOnMouseExited(event-> field.preTurnOut(l4,3));
 
-        l5.setOnMouseEntered(event->gfield.preTurnIn(l5,4));
-        l5.setOnMouseExited(event->gfield.preTurnOut(l5,4));
+        l5.setOnMouseEntered(event-> field.preTurnIn(l5,4));
+        l5.setOnMouseExited(event-> field.preTurnOut(l5,4));
 
-        l6.setOnMouseEntered(event->gfield.preTurnIn(l6,5));
-        l6.setOnMouseExited(event->gfield.preTurnOut(l6,5));
+        l6.setOnMouseEntered(event-> field.preTurnIn(l6,5));
+        l6.setOnMouseExited(event-> field.preTurnOut(l6,5));
 
-        l7.setOnMouseEntered(event->gfield.preTurnIn(l7,6));
-        l7.setOnMouseExited(event->gfield.preTurnOut(l7,6));
+        l7.setOnMouseEntered(event-> field.preTurnIn(l7,6));
+        l7.setOnMouseExited(event-> field.preTurnOut(l7,6));
 
-        l8.setOnMouseEntered(event->gfield.preTurnIn(l8,7));
-        l8.setOnMouseExited(event->gfield.preTurnOut(l8,7));
+        l8.setOnMouseEntered(event-> field.preTurnIn(l8,7));
+        l8.setOnMouseExited(event-> field.preTurnOut(l8,7));
 
-        l9.setOnMouseEntered(event->gfield.preTurnIn(l9,8));
-        l9.setOnMouseExited(event->gfield.preTurnOut(l9,8));
+        l9.setOnMouseEntered(event-> field.preTurnIn(l9,8));
+        l9.setOnMouseExited(event-> field.preTurnOut(l9,8));
 
-        l1.setOnMouseClicked(event -> gfield.logic(0,l1,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
-        l2.setOnMouseClicked(event -> gfield.logic(1,l2,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
-        l3.setOnMouseClicked(event -> gfield.logic(2,l3,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
-        l4.setOnMouseClicked(event -> gfield.logic(3,l4,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
-        l5.setOnMouseClicked(event -> gfield.logic(4,l5,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
-        l6.setOnMouseClicked(event -> gfield.logic(5,l6,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
-        l7.setOnMouseClicked(event -> gfield.logic(6,l7,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
-        l8.setOnMouseClicked(event -> gfield.logic(7,l8,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
-        l9.setOnMouseClicked(event -> gfield.logic(8,l9,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
+        l1.setOnMouseClicked(event -> field.logic(0,l1,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
+        l2.setOnMouseClicked(event -> field.logic(1,l2,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
+        l3.setOnMouseClicked(event -> field.logic(2,l3,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
+        l4.setOnMouseClicked(event -> field.logic(3,l4,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
+        l5.setOnMouseClicked(event -> field.logic(4,l5,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
+        l6.setOnMouseClicked(event -> field.logic(5,l6,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
+        l7.setOnMouseClicked(event -> field.logic(6,l7,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
+        l8.setOnMouseClicked(event -> field.logic(7,l8,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
+        l9.setOnMouseClicked(event -> field.logic(8,l9,p1s,p2s,l1,l2,l3,l4,l5,l6,l7,l8,l9));
     }
 }
