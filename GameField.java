@@ -10,7 +10,7 @@ public class GameField {
 
     public GameField(){};
 
-    void clear(Label l1,Label l2,Label l3,Label l4,Label l5,Label l6,Label l7,Label l8,Label l9) {
+    public void clear(Label l1,Label l2,Label l3,Label l4,Label l5,Label l6,Label l7,Label l8,Label l9) {
         l1.setText("");
         l2.setText("");
         l3.setText("");
@@ -21,8 +21,8 @@ public class GameField {
         l8.setText("");
         l9.setText("");
     }
-    
-    void reset(Label p1s, Label p2s,
+
+    public void reset(Label p1s, Label p2s,
                Label l1,Label l2,Label l3,Label l4,Label l5,Label l6,Label l7,Label l8,Label l9) {
         map.fillMap();
         clear(l1,l2,l3,l4,l5,l6,l7,l8,l9);
@@ -33,29 +33,29 @@ public class GameField {
         p2s.setText(String.valueOf(p2.getScore()));
     }
 
-    void pDefault() {
+    public void pDefault() {
         if(!p1.getTurn()) {
             p1.pTurnSwitch();
             p2.pTurnSwitch();
         }
     }
 
-    void turnSwitch() {
+    public void turnSwitch() {
         p1.pTurnSwitch();
         p2.pTurnSwitch();
     }
 
-    void setX(Label label, javafx.scene.paint.Color color) {
+    public void setX(Label label, javafx.scene.paint.Color color) {
         label.setTextFill(color);
         label.setText("X");
     }
 
-    void setO(Label label,javafx.scene.paint.Color color) {
+    public  void setO(Label label,javafx.scene.paint.Color color) {
         label.setTextFill(color);
         label.setText("O");
     }
 
-    void preTurnIn(Label l,int i) {
+    public void preTurnIn(Label l,int i) {
         if(p1.getTurn() && map.getValue(i)<1) {
             setX(l,javafx.scene.paint.Color.web("#97a5b2"));
         } else if (p2.getTurn() && map.getValue(i)<1) {
@@ -63,13 +63,13 @@ public class GameField {
         }
     }
 
-    void preTurnOut(Label l, int i) {
+    public void preTurnOut(Label l, int i) {
         if(map.getValue(i)<1) {
             l.setText("");
         }
     }
 
-    void logic(int i,Label l, Label p1s, Label p2s,
+    public void logic(int i,Label l, Label p1s, Label p2s,
                Label l1,Label l2,Label l3,Label l4,Label l5,Label l6,Label l7,Label l8,Label l9) {
         if(p1.getTurn() && map.getValue(i)<1) {
             map.setX(i);
