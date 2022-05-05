@@ -34,7 +34,8 @@ public class Controller implements Initializable {
     @FXML
     Label l9;
 
-    Elements[] map = new Elements[9];
+
+    Elements map = new Elements(0);
     MusicPlayer musicPlayer = new MusicPlayer();
     Player p1=new Player(0,true);
     Player p2=new Player(0,false);
@@ -51,13 +52,14 @@ public class Controller implements Initializable {
         l9.setText("");
     }
 
-    void reset(Elements[] map, Player p1, Player p2, Label p1s, Label p2s){
-        Elements.fill_map(map);
+    void reset(Elements map, Player p1, Player p2, Label p1s, Label p2s){
+        map.fill_map();
         clear();
         Player.p_default(p1,p2);
-        Player.reset(p1,p2);
-        p1s.setText(String.valueOf(p1.score));
-        p2s.setText(String.valueOf(p2.score));
+        p1.reset();
+        p2.reset();
+        p1s.setText(String.valueOf(Player.getScore(p1)));
+        p2s.setText(String.valueOf(Player.getScore(p2)));
     }
 
     void set_x(Label label, javafx.scene.paint.Color color){
@@ -70,34 +72,34 @@ public class Controller implements Initializable {
         label.setText("O");
     }
 
-    void pre_turn_in(Label l,Player p1, Player p2, Elements [] map, int i){
-        if(p1.turn && map[i].get_value()<1) {
+    void pre_turn_in(Label l,Player p1, Player p2, Elements map, int i){
+        if(p1.getTurn() && map.get_value(i)<1) {
             set_x(l,javafx.scene.paint.Color.web("#97a5b2"));
-        }else if (p2.turn && map[i].get_value()<1) {
+        }else if (p2.getTurn() && map.get_value(i)<1) {
             set_o(l,javafx.scene.paint.Color.web("#97a5b2"));
         }
     }
 
-    void pre_turn_out(Label l, Elements[] map, int i){
-        if(map[i].get_value()<1) {
+    void pre_turn_out(Label l, Elements map, int i){
+        if(map.get_value(i)<1) {
             l.setText("");
         }
     }
     
-    void logic(Player p1,Player p2, Elements[] map, int i,Label l, Label p1s, Label p2s, MusicPlayer musicPlayer){
-        if(p1.turn && map[i].get_value()<1) {
-            Elements.set_x(map,i);
+    void logic(Player p1,Player p2, Elements map, int i,Label l, Label p1s, Label p2s, MusicPlayer musicPlayer){
+        if(p1.getTurn() && map.get_value(i)<1) {
+            map.set_x(i);
             set_x(l,javafx.scene.paint.Color.DODGERBLUE);
             musicPlayer.turn_music();
-            if(Elements.check_win(map)) {
-                Player.add_score(p1);
-                p1s.setText(String.valueOf(p1.score));
-                Elements.fill_map(map);
+            if(map.check_win()) {
+                p1.add_score();
+                p1s.setText(String.valueOf(Player.getScore(p1)));
+                map.fill_map();
                 musicPlayer.win_music();
                 clear();
                 Player.p_default(p1,p2);
-            }else if (Elements.check_full(map)) {
-                Elements.fill_map(map);
+            }else if (map.check_full()) {
+                map.fill_map();
                 musicPlayer.draw_music();
                 clear();
                 Player.p_default(p1,p2
@@ -105,25 +107,24 @@ public class Controller implements Initializable {
             }else{
                 Player.t_switch(p1,p2);
             }
-        }else if (p2.turn && map[i].get_value()<1) {
-            Elements.set_o(map,i);
+        }else if (p2.getTurn() && map.get_value(i)<1) {
+            map.set_o(i);
             set_o(l,javafx.scene.paint.Color.web("#ff215c"));
             musicPlayer.turn_music();
-            if(Elements.check_win(map)){
-                Player.add_score(p2);
-                p2s.setText(String.valueOf(p2.score));
-                Elements.fill_map(map);
+            if(map.check_win()){
+                p2.add_score();
+                p2s.setText(String.valueOf(Player.getScore(p2)));
+                map.fill_map();
                 musicPlayer.win_music();
                 clear();
                 Player.p_default(p1,p2
                 );
 
-            }else if (Elements.check_full(map)) {
-                Elements.fill_map(map);
+            }else if (map.check_full()) {
+                map.fill_map();
                 musicPlayer.draw_music();
                 clear();
-                Player.p_default(p1,p2
-                );
+                Player.p_default(p1,p2);
             }
             else {
                 Player.t_switch(p1,p2);
