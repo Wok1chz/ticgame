@@ -4,7 +4,6 @@ public class Player {
     private int score;
     private boolean turn;
 
-
     Player (int score, boolean turn){
         this.score = score;
         this.turn = turn;
@@ -14,8 +13,8 @@ public class Player {
         score = 0;
     }
 
-    public static int getScore(Player player){
-        return player.score;
+    public int getScore(){
+        return score;
     }
 
     public boolean getTurn(){
@@ -26,19 +25,14 @@ public class Player {
         score++;
     }
 
-    static void p_default(Player p1, Player p2){
-        p1.turn = true;
-        p2.turn = false;
-    }
+    public void pTurnSwitch(){
 
-    public static void t_switch(Player player1, Player player2){
-        if(player1.turn){
-            player1.turn = false;
-            player2.turn = true;
-        } else if (player2.turn){
-            player1.turn = true;
-            player2.turn = false;
-        }
+        if(turn){
+            turn= false;
+        }else {
+            turn = true;
+        };
+
     }
 
 }
