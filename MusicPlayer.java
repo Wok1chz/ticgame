@@ -5,21 +5,21 @@ import javafx.scene.media.AudioClip;
 public class MusicPlayer {
     MusicPlayer(){}
 
-    void turnMusic(){
+    void turnMusic() {
         new AudioClip(
                 getClass()
                         .getResource("turn.mp3")
                         .toExternalForm())
                 .play();
     }
-    void winMusic(){
+    void winMusic() {
         new AudioClip(
                 getClass()
                         .getResource("win.mp3")
                         .toExternalForm())
                 .play();
     }
-    void drawMusic(){
+    void drawMusic() {
         new AudioClip(
                 getClass()
                         .getResource("draw.mp3")
