@@ -50,7 +50,7 @@ public class GameField {
         label.setText("X");
     }
 
-    public  void setO(Label label,javafx.scene.paint.Color color) {
+    public void setO(Label label,javafx.scene.paint.Color color) {
         label.setTextFill(color);
         label.setText("O");
     }
