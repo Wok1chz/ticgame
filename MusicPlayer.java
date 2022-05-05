@@ -4,17 +4,17 @@ import javafx.scene.media.AudioClip;
 
 public class MusicPlayer {
 
-    private AudioClip turnMusic = new AudioClip(
+    private final AudioClip turnMusic = new AudioClip(
             getClass()
                     .getResource("turn.mp3")
                     .toExternalForm());
 
-    private AudioClip winMusic = new AudioClip(
+    private final AudioClip winMusic = new AudioClip(
             getClass()
                     .getResource("win.mp3")
                     .toExternalForm());
 
-    private AudioClip drawMsuic = new AudioClip(
+    private final AudioClip drawMusic = new AudioClip(
             getClass()
                     .getResource("draw.mp3")
                     .toExternalForm());
@@ -30,6 +30,6 @@ public class MusicPlayer {
     }
 
     void drawMusic() {
-        drawMsuic.play();
+        drawMusic.play();
     }
 }
