@@ -17,6 +17,7 @@ public class Elements {
             gmap[i] = new Elements(0);
         }
     }
+
     public void setX( int i) {
         gmap[i].arg =1;
     }

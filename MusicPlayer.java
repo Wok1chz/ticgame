@@ -3,7 +3,9 @@ package sample;
 import javafx.scene.media.AudioClip;
 
 public class MusicPlayer {
-    MusicPlayer(){}
+    MusicPlayer() {
+
+    }
 
     void turnMusic() {
         new AudioClip(
@@ -12,6 +14,7 @@ public class MusicPlayer {
                         .toExternalForm())
                 .play();
     }
+
     void winMusic() {
         new AudioClip(
                 getClass()
@@ -19,6 +22,7 @@ public class MusicPlayer {
                         .toExternalForm())
                 .play();
     }
+
     void drawMusic() {
         new AudioClip(
                 getClass()

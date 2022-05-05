@@ -32,16 +32,19 @@ public class GameField {
         p1s.setText(String.valueOf(p1.getScore()));
         p2s.setText(String.valueOf(p2.getScore()));
     }
+
     void pDefault() {
         if(!p1.getTurn()) {
             p1.pTurnSwitch();
             p2.pTurnSwitch();
         }
     }
+
     void turnSwitch() {
         p1.pTurnSwitch();
         p2.pTurnSwitch();
     }
+
     void setX(Label label, javafx.scene.paint.Color color) {
         label.setTextFill(color);
         label.setText("X");
@@ -65,6 +68,7 @@ public class GameField {
             l.setText("");
         }
     }
+
     void logic(int i,Label l, Label p1s, Label p2s,
                Label l1,Label l2,Label l3,Label l4,Label l5,Label l6,Label l7,Label l8,Label l9) {
         if(p1.getTurn() && map.getValue(i)<1) {
