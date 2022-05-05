@@ -4,7 +4,7 @@ public class Elements {
     private int arg;
     private  final Elements[] gmap = new Elements[9];
 
-    Elements(int arg) {
+    public Elements(int arg) {
         this.arg =arg;
     }
 

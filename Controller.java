@@ -34,7 +34,7 @@ public class Controller implements Initializable {
     @FXML
     Label l9;
 
-    GameField field = new GameField();
+    public GameField field = new GameField();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

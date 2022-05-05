@@ -3,31 +3,33 @@ package sample;
 import javafx.scene.media.AudioClip;
 
 public class MusicPlayer {
-    MusicPlayer() {
 
-    }
+    private AudioClip turnMusic = new AudioClip(
+            getClass()
+                    .getResource("turn.mp3")
+                    .toExternalForm());
+
+    private AudioClip winMusic = new AudioClip(
+            getClass()
+                    .getResource("win.mp3")
+                    .toExternalForm());
+
+    private AudioClip drawMsuic = new AudioClip(
+            getClass()
+                    .getResource("draw.mp3")
+                    .toExternalForm());
+
+    public MusicPlayer() { }
 
     void turnMusic() {
-        new AudioClip(
-                getClass()
-                        .getResource("turn.mp3")
-                        .toExternalForm())
-                .play();
+        turnMusic.play();
     }
 
     void winMusic() {
-        new AudioClip(
-                getClass()
-                        .getResource("win.mp3")
-                        .toExternalForm())
-                .play();
+        winMusic.play();
     }
 
     void drawMusic() {
-        new AudioClip(
-                getClass()
-                        .getResource("draw.mp3")
-                        .toExternalForm())
-                .play();
+        drawMsuic.play();
     }
 }

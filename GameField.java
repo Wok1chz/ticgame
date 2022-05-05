@@ -8,7 +8,7 @@ public class GameField {
     private final Player p1 = new Player(0,true);
     private final Player p2 = new Player(0,false);
 
-
+    public GameField(){};
 
     void clear(Label l1,Label l2,Label l3,Label l4,Label l5,Label l6,Label l7,Label l8,Label l9) {
         l1.setText("");
